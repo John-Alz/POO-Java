@@ -1,12 +1,14 @@
 public class Persona {
 
+    private int identificacion;
     private String nombre;
-    private int edad;
+    private String fechaNacimiento;
 
 
-    public Persona(String nombre, int edad) {
+    public Persona(int identificacion, String nombre, String fechaNacimiento ) {
+        this.identificacion = identificacion;
         this.nombre = nombre;
-        this.edad = edad;
+        this.fechaNacimiento = fechaNacimiento;
     }
 
     public String getNombre() {
@@ -17,38 +19,40 @@ public class Persona {
         this.nombre = nombre;
     }
 
-    public int getEdad() {
-        return edad;
+    public int getIdenticacion() {
+        return identificacion;
     }
 
-    public void setEdad(int edad) {
-        this.edad = edad;
+    public void setIdenticacion(int identificacionV2) {
+        this.identificacion = identificacionV2;
     }
 
-    public void saludar() {
-        System.out.println("Hola soy " + this.nombre);
+    public String getFechaNacimiento() {
+        return fechaNacimiento;
     }
 
-    public void mostrarInformacion() {
-        System.out.println("Nombre: " + nombre + ", Edad: " + edad);
+    public void setFechaNacimiento(String  fechaV2) {
+        this.fechaNacimiento = fechaV2;
     }
+
 
     public static void main(String[] args) {
-        Persona Juan = new Persona("Juan", 42);
-        Persona Jairo = new Persona("Jairo", 89);
 
-        System.out.println(Juan.getNombre());
-        System.out.println(Juan.getEdad());
-        Juan.mostrarInformacion();
-        Juan.saludar();
-
+        Persona personUno = new Persona(126363, "John", "26/07/2003");
+        System.out.println(personUno.getIdenticacion());
+        System.out.println(personUno.getNombre());
+        System.out.println(personUno.getFechaNacimiento());
 
         System.out.println("================== Informacion leida y modificada del Segundo objeto ==================");
 
-        Jairo.mostrarInformacion();
-        Jairo.setNombre("John");
-        Jairo.setEdad(21);
-        Jairo.mostrarInformacion();
+        personUno.setIdenticacion(17728344);
+        personUno.setNombre("Angel");
+        personUno.setFechaNacimiento("25/08/2002");
+
+        System.out.println(personUno.getIdenticacion());
+        System.out.println(personUno.getNombre());
+        System.out.println(personUno.getFechaNacimiento());
+
     }
 
 }
